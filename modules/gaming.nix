@@ -22,5 +22,7 @@
     wineWowPackages.waylandFull
 
     protonup-qt
+    gamemoderun
+    mangohud
   ];
 }
