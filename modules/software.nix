@@ -10,11 +10,12 @@
   programs.hyprland.enable = true;
   programs.gnupg.agent = {
     enable = true;
-    pinentryFlavor = "curses";
+    pinentryPackage = pkgs.pinentry-curses;
     enableSSHSupport = true;
   };
 
   environment.systemPackages = with pkgs; [
+    vial
     usbutils
     btop
     tmux
