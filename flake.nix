@@ -17,6 +17,7 @@
         ./modules/users.nix
         ./modules/locale.nix
         ./modules/system.nix
+        ./modules/archivers.nix
       ];
     in
     {
