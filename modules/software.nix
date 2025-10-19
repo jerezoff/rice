@@ -4,8 +4,7 @@
   programs.zsh.enable = true;
   xdg.portal = {
     enable = true;
-    extraPortals =
-      [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland ];
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
   };
   programs.hyprland.enable = true;
   programs.gnupg.agent = {
@@ -15,6 +14,14 @@
   };
 
   environment.systemPackages = with pkgs; [
+    (pkgs.wrapOBS {
+      plugins = with pkgs.obs-studio-plugins; [
+        wlrobs
+        obs-backgroundremoval
+        obs-pipewire-audio-capture
+      ];
+    })
+    helvum
     vial
     usbutils
     btop
@@ -27,7 +34,6 @@
     qbittorrent
     kdePackages.dolphin
     xdg-desktop-portal
-    xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
   ];
 }
