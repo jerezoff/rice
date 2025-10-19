@@ -6,7 +6,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       global_modules = [
@@ -30,7 +30,8 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.jerezoff = import ./home/jerezoff/home.nix;
+            home-manager.users.jerezoff =
+              import ./home/jerezoff/hosts/heavycruiser.nix;
           }
         ];
       };

@@ -4,17 +4,7 @@
   home.homeDirectory = "/home/jerezoff";
   home.stateVersion = "25.05";
 
-  home.packages = with pkgs; [
-    neovim
-    git
-    pavucontrol
-    networkmanagerapplet
-    waybar
-    gnome-software
-    tmux
-    kitty
-    ghostty
-  ];
+  home.packages = with pkgs; [ neovim git gnome-software tmux ghostty ];
 
   programs.git = {
     enable = true;

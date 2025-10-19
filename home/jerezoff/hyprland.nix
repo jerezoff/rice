@@ -1,22 +1,25 @@
 { pkgs, ... }: {
 
+  home.packages = with pkgs; [
+    waybar
+    ghostty
+    pavucontrol
+    networkmanagerapplet
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;
     xwayland.enable = true;
     settings = {
       exec-once = [
+        "waybar"
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "xdg-desktop-portal &"
       ];
       "$terminal" = "ghostty";
       "$fileManager" = "dolphin";
       "$menu" = "wofi --show drun";
-      monitor = [
-        "DP-3, 3440x1440@144, 0x0, 1"
-        "HDMI-A-1, 1920x1080@100, -1920x0, 1"
-        ", preferred, auto, auto"
-      ];
       input = {
         kb_layout = "us, ru";
         kb_options = "grp:alt_shift_toggle";
