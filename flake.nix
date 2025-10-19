@@ -22,8 +22,7 @@
         ./modules/theme.nix
         catppuccin.nixosModules.catppuccin
       ];
-    in
-    {
+    in {
       nixosConfigurations.heavycruiser = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = global_modules ++ [
@@ -47,10 +46,14 @@
         modules = global_modules ++ [
           ./hosts/acefighter/configuration.nix
           ./hosts/acefighter/hardware-configuration.nix
+          home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.jerezoff = import ./home/jerezoff/home.nix;
+            home-manager.users.jerezoff = {
+              imports =
+                [ ./home/jerezoff/home.nix catppuccin.homeModules.catppuccin ];
+            };
           }
         ];
       };
