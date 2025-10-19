@@ -7,6 +7,7 @@
     gajim
     hyprshot
     mako
+    libnotify
     wl-clipboard
     hyprlock
     hypridle

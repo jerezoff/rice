@@ -4,7 +4,8 @@
   programs.zsh.enable = true;
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+    extraPortals =
+      [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland ];
   };
   programs.hyprland.enable = true;
   programs.gnupg.agent = {
@@ -35,5 +36,6 @@
     kdePackages.dolphin
     xdg-desktop-portal
     xdg-desktop-portal-hyprland
+    xdg-desktop-portal-gtk
   ];
 }
