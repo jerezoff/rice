@@ -1,6 +1,16 @@
 { pkgs, ... }: {
 
-  home.packages = with pkgs; [ ghostty pavucontrol networkmanagerapplet gajim ];
+  home.packages = with pkgs; [
+    ghostty
+    pavucontrol
+    networkmanagerapplet
+    gajim
+    hyprshot
+    mako
+    wl-clipboard
+    hyprlock
+    hypridle
+  ];
 
   programs.waybar.enable = true;
 
@@ -103,6 +113,7 @@
         ", XF86AudioPrev, exec, playerctl previous"
       ];
       bind = [
+        "$mainMod SHIFT, T, exec, hyprshot -m region"
         "$mainMod, Q, exec, $terminal"
         "$mainMod, R, exec, $menu"
         "$mainMod, C, killactive,"
