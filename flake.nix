@@ -51,8 +51,10 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.jerezoff = {
-              imports =
-                [ ./home/jerezoff/home.nix catppuccin.homeModules.catppuccin ];
+              imports = [
+                ./home/jerezoff/hosts/heavycruiser.nix
+                catppuccin.homeModules.catppuccin
+              ];
             };
           }
         ];
