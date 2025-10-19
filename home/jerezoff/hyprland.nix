@@ -1,11 +1,8 @@
 { pkgs, ... }: {
 
-  home.packages = with pkgs; [
-    waybar
-    ghostty
-    pavucontrol
-    networkmanagerapplet
-  ];
+  home.packages = with pkgs; [ ghostty pavucontrol networkmanagerapplet gajim ];
+
+  programs.waybar.enable = true;
 
   wayland.windowManager.hyprland = {
     enable = true;
