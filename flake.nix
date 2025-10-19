@@ -2,11 +2,12 @@
   description = "Jerezoffs hosts config";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    catppuccin.url = "github:catppuccin/nix";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, catppuccin, ... }:
     let
       system = "x86_64-linux";
       global_modules = [
@@ -18,6 +19,8 @@
         ./modules/locale.nix
         ./modules/system.nix
         ./modules/archivers.nix
+        ./modules/theme.nix
+        catppuccin.nixosModules.catppuccin
       ];
     in
     {
@@ -30,8 +33,12 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.jerezoff =
-              import ./home/jerezoff/hosts/heavycruiser.nix;
+            home-manager.users.jerezoff = {
+              imports = [
+                ./home/jerezoff/hosts/heavycruiser.nix
+                catppuccin.homeModules.catppuccin
+              ];
+            };
           }
         ];
       };

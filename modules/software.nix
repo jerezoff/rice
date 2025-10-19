@@ -7,6 +7,7 @@
     extraPortals =
       [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland ];
   };
+  programs.dconf.enable = true;
   programs.hyprland.enable = true;
   programs.gnupg.agent = {
     enable = true;

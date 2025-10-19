@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-  imports = [ ./neovim.nix ./hyprland.nix ];
+{ pkgs, catppuccin, ... }: {
+  imports = [ ./neovim.nix ./hyprland.nix ./theme.nix ];
   home.username = "jerezoff";
   home.homeDirectory = "/home/jerezoff";
   home.stateVersion = "25.05";
