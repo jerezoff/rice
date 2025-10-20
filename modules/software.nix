@@ -21,6 +21,8 @@
     usbutils
     btop
     tmux
+    vlc
+    mpv
     git
     neovim
     firefox
