@@ -20,9 +20,12 @@
         ./modules/system.nix
         ./modules/archivers.nix
         ./modules/theme.nix
+        ./modules/fonts.nix
+        ./modules/certs.nix
         catppuccin.nixosModules.catppuccin
       ];
-    in {
+    in
+    {
       nixosConfigurations.heavycruiser = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = global_modules ++ [
@@ -53,6 +56,25 @@
             home-manager.users.jerezoff = {
               imports = [
                 ./home/jerezoff/hosts/heavycruiser.nix
+                catppuccin.homeModules.catppuccin
+              ];
+            };
+          }
+        ];
+      };
+
+      nixosConfigurations.hackersmainframe = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = global_modules ++ [
+          ./hosts/hackersmainframe/configuration.nix
+          ./hosts/hackersmainframe/hardware-configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.jerezoff = {
+              imports = [
+                ./home/jerezoff/hosts/hackersmainframe.nix
                 catppuccin.homeModules.catppuccin
               ];
             };

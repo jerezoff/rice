@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
+    sops
     neovim
     python3
     lua
@@ -16,7 +17,8 @@
     tree-sitter
     gcc
     nodejs
-    cargo
     rustc
+    zig
+    cargo
   ];
 }

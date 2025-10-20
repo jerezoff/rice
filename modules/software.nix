@@ -16,13 +16,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    (pkgs.wrapOBS {
-      plugins = with pkgs.obs-studio-plugins; [
-        wlrobs
-        obs-backgroundremoval
-        obs-pipewire-audio-capture
-      ];
-    })
     helvum
     vial
     usbutils
@@ -31,10 +24,6 @@
     git
     neovim
     firefox
-    wofi
-    ghostty
-    qbittorrent
-    kdePackages.dolphin
     xdg-desktop-portal
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gtk
