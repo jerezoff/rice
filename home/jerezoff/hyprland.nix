@@ -44,6 +44,11 @@
         allow_tearing = "false";
         layout = "dwindle";
       };
+      dwindle = {
+        pseudotile = true;
+        preserve_split = true;
+      };
+      master = { new_status = "master"; };
       decoration = {
         rounding = "5";
         rounding_power = "2";
