@@ -1,5 +1,6 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [ obs-studio ];
+  environment.systemPackages = with pkgs; [ obs-studio lutris ];
+
   programs.steam = {
     enable = true;
     remotePlay.openFirewall =
