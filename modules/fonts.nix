@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   fonts.packages = with pkgs; [
-    fira-code
+    nerd-fonts.fira-code
+    nerd-fonts.symbols-only
     fira-code-symbols
     font-awesome
     liberation_ttf
