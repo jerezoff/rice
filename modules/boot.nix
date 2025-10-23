@@ -1,14 +1,15 @@
 { pkgs, ... }: {
+  environment.systemPackages = with pkgs; [ efibootmgr ];
   boot.loader = {
     efi = {
-      canTouchEfiVariables = false;
-      efiSysMountPoint = "/boot/efi";
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/efi";
     };
     grub = {
       efiSupport = true;
       devices = [ "nodev" ];
       enable = true;
-      efiInstallAsRemovable = true;
+      efiInstallAsRemovable = false;
       useOSProber = true;
       extraEntriesBeforeNixOS = false;
       extraEntries = ''

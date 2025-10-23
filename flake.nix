@@ -3,7 +3,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     catppuccin.url = "github:catppuccin/nix";
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -36,10 +36,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.jerezoff = {
-              imports = [
-                ./home/jerezoff/hosts/heavycruiser.nix
-                catppuccin.homeModules.catppuccin
-              ];
+              imports = [ ./home/jerezoff/hosts/heavycruiser.nix ];
             };
           }
         ];
@@ -54,10 +51,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.jerezoff = {
-              imports = [
-                ./home/jerezoff/hosts/heavycruiser.nix
-                catppuccin.homeModules.catppuccin
-              ];
+              imports = [ ./home/jerezoff/hosts/heavycruiser.nix ];
             };
           }
         ];
@@ -73,10 +67,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.jerezoff = {
-              imports = [
-                ./home/jerezoff/hosts/hackersmainframe.nix
-                catppuccin.homeModules.catppuccin
-              ];
+              imports = [ ./home/jerezoff/hosts/hackersmainframe.nix ];
             };
           }
         ];

@@ -12,7 +12,6 @@
     ghostty
     wofi
     qbittorrent
-    kdePackages.dolphin
   ];
 
   programs.git = {

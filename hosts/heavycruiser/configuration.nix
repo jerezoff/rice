@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [ obs-studio lutris ];
+  environment.systemPackages = with pkgs; [ obs-studio ];
 
   programs.steam = {
     enable = true;
