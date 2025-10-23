@@ -1,6 +1,7 @@
 { pkgs, ... }: {
 
   home.packages = with pkgs; [
+    brightnessctl
     ghostty
     pavucontrol
     networkmanagerapplet
@@ -110,6 +111,7 @@
         ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ",XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
         ",XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
       ];
       bindl = [
@@ -139,16 +141,14 @@
       ] ++ (
         # workspaces
         # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
-        builtins.concatLists (builtins.genList
-          (i:
-            let ws = i + 1;
-            in
-            [
-              "$mainMod, code:1${toString i}, workspace, ${toString ws}"
-              "$mainMod SHIFT, code:1${toString i}, movetoworkspace, ${
+        builtins.concatLists (builtins.genList (i:
+          let ws = i + 1;
+          in [
+            "$mainMod, code:1${toString i}, workspace, ${toString ws}"
+            "$mainMod SHIFT, code:1${toString i}, movetoworkspace, ${
               toString ws
             }"
-            ]) 9));
+          ]) 9));
 
     };
   };
