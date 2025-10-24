@@ -46,6 +46,7 @@
         modules = global_modules ++ [
           ./hosts/acefighter/configuration.nix
           ./hosts/acefighter/hardware-configuration.nix
+          ./modules/gaming/minecraft.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
