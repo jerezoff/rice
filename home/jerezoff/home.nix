@@ -5,7 +5,6 @@
   home.stateVersion = "25.05";
 
   home.packages = with pkgs; [
-    neovim
     git
     gnome-software
     tmux
@@ -15,7 +14,11 @@
     vial
   ];
 
-  environment.variables.EDITOR = "nvim";
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
+
   programs.git = {
     enable = true;
     userEmail = "jerezoff@gmail.com";
