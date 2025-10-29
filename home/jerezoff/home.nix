@@ -14,11 +14,6 @@
     vial
   ];
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
-
   programs.git = {
     enable = true;
     userEmail = "jerezoff@gmail.com";

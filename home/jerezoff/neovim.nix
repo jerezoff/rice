@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     sops
-    neovim
     python3
     lua
     fzf
@@ -21,4 +20,9 @@
     zig
     cargo
   ];
+
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
 }
