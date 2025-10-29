@@ -1,5 +1,5 @@
 { ... }: {
-  imports = [ ../home.nix ../hyprland.nix ../theme.nix ];
+  imports = [ ../home.nix ../hyprland/module.nix ../theme.nix ];
   wayland.windowManager.hyprland.settings = {
     monitor = [
       "DP-3, 3440x1440@144, 0x0, 1"

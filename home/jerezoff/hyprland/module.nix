@@ -1,5 +1,7 @@
 { pkgs, ... }: {
 
+  imports = [ ./waybar/module.nix ];
+
   home.packages = with pkgs; [
     brightnessctl
     ghostty
@@ -13,8 +15,6 @@
     hyprlock
     hypridle
   ];
-
-  programs.waybar.enable = true;
 
   wayland.windowManager.hyprland = {
     enable = true;
