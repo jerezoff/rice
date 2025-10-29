@@ -5,6 +5,7 @@
   services.flatpak.enable = true;
 
   services.xserver.enable = true;
+  services.dbus.enable = true;
   services.displayManager.sddm = {
     enable = true;
     package = pkgs.kdePackages.sddm;
@@ -12,6 +13,12 @@
   services.displayManager.defaultSession = "hyprland";
   services.udisks2.enable = true;
   services.gvfs.enable = true;
+  services.tumbler.enable = true;
+  services.upower.enable = true;
+
+  services.udev = {
+    packages = with pkgs; [ qmk qmk-udev-rules qmk_hid via vial ];
+  };
 
   services.pipewire = {
     enable = true;

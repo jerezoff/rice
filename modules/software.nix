@@ -4,8 +4,11 @@
   programs.zsh.enable = true;
   xdg.portal = {
     enable = true;
-    extraPortals =
-      [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland ];
+    config = {
+      common.default = "*";
+      hyprland = { default = [ "hyprland" "gtk" ]; };
+    };
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
   programs.dconf.enable = true;
   programs.hyprland.enable = true;
@@ -15,9 +18,18 @@
     enableSSHSupport = true;
   };
 
+  programs.thunar.enable = true;
+  programs.xfconf.enable = true;
+  programs.thunar.plugins = with pkgs.xfce; [
+    thunar-archive-plugin
+    thunar-volman
+  ];
+
+  environment.sessionVariables = { NIXOS_OZONE_WL = "1"; };
+
   environment.systemPackages = with pkgs; [
+
     helvum
-    vial
     usbutils
     btop
     tmux

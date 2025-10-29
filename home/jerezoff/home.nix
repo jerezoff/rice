@@ -12,8 +12,10 @@
     ghostty
     wofi
     qbittorrent
+    vial
   ];
 
+  environment.variables.EDITOR = "nvim";
   programs.git = {
     enable = true;
     userEmail = "jerezoff@gmail.com";
