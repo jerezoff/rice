@@ -7,6 +7,7 @@
   home.packages = with pkgs; [
     kubectl
     k9s
+    obsidian
     fluxcd
     age
     git
