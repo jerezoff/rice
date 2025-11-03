@@ -6,6 +6,8 @@
 
   home.packages = with pkgs; [
     kubectl
+    k9s
+    fluxcd
     age
     git
     gnome-software
