@@ -52,10 +52,12 @@
 
       nixosConfigurations.devserver = nixpkgs.lib.nixosSystem {
         inherit system;
-        networking.hostName = "devserver";
         modules = global_modules ++ [
           ./hosts/devserver/configuration.nix
           ./hosts/devserver/hardware-configuration.nix
+          ./modules/server/garage.nix
+          ./modules/server/postgres.nix
+          ./modules/server/redis.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
