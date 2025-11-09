@@ -6,4 +6,6 @@
     ../modules/software/tui.nix
     ../modules/software/git.nix
   ];
+  nixpkgs.config.allowUnfree = true;
+
 }
