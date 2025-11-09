@@ -25,7 +25,7 @@
     fsType = "ext4";
   };
 
-  fileSystems."/boot/efi" = {
+  fileSystems."/efi" = {
     device = "/dev/disk/by-uuid/NIXBOOT";
     fsType = "vfat";
     options = [ "fmask=0077" "dmask=0077" ];
