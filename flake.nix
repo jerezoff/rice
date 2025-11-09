@@ -58,11 +58,11 @@
         ];
       };
 
-      nixosConfigurations.hackersmainframe = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.devserver = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = global_modules ++ [
-          ./hosts/hackersmainframe/configuration.nix
-          ./hosts/hackersmainframe/hardware-configuration.nix
+          ./hosts/devserver/configuration.nix
+          ./hosts/devserver/hardware-configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
