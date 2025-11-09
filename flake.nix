@@ -10,20 +10,8 @@
   outputs = { nixpkgs, home-manager, catppuccin, ... }:
     let
       system = "x86_64-linux";
-      global_modules = [
-        ./modules/boot.nix
-        ./modules/networking.nix
-        ./modules/services.nix
-        ./modules/software.nix
-        ./modules/users.nix
-        ./modules/locale.nix
-        ./modules/system.nix
-        ./modules/archivers.nix
-        ./modules/theme.nix
-        ./modules/fonts.nix
-        ./modules/certs.nix
-        catppuccin.nixosModules.catppuccin
-      ];
+      global_modules =
+        [ catppuccin.nixosModules.catppuccin ./flavours/base.nix ];
     in
     {
       nixosConfigurations.heavycruiser = nixpkgs.lib.nixosSystem {
@@ -31,6 +19,9 @@
         modules = global_modules ++ [
           ./hosts/heavycruiser/configuration.nix
           ./hosts/heavycruiser/hardware-configuration.nix
+          ./flavours/gaming.nix
+          ./flavours/desktop.nix
+          ./flavours/media.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -46,7 +37,8 @@
         modules = global_modules ++ [
           ./hosts/acefighter/configuration.nix
           ./hosts/acefighter/hardware-configuration.nix
-          ./modules/gaming/minecraft.nix
+          ./flavours/desktop.nix
+          ./flavours/media.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
