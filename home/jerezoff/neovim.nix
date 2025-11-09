@@ -1,4 +1,8 @@
-{ pkgs, ... }: {
+{ nixvim, lib, pkgs, ... }:
+{
+  imports = [
+    nixvim.homeModules.nixvim
+  ];
   home.packages = with pkgs; [
     sops
     python3
@@ -21,8 +25,27 @@
     cargo
   ];
 
-  programs.neovim = {
+  programs.nixvim = {
+    viAlias = true;
+    vimAlias = true;
     enable = true;
     defaultEditor = true;
+
+    globals.mapleader = " ";
+
+    plugins = {
+      web-devicons.enable = true;
+      lualine.enable = true;
+      treesitter.enable = true;
+      neo-tree.enable = true;
+      lspconfig.enable = true;
+      blink-cmp.enable = true;
+      telescope.enable = true;
+      lazygit.enable = true;
+      dashboard.enable = true;
+    };
+
+    colorschemes.gruvbox.enable = true;
+
   };
 }
