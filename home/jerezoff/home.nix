@@ -4,20 +4,7 @@
   home.homeDirectory = "/home/jerezoff";
   home.stateVersion = "25.05";
 
-  home.packages = with pkgs; [
-    kubectl
-    k9s
-    obsidian
-    fluxcd
-    age
-    git
-    gnome-software
-    tmux
-    ghostty
-    wofi
-    qbittorrent
-    vial
-  ];
+  home.packages = with pkgs; [ kubectl k9s git tmux wofi ];
 
   programs.git = {
     enable = true;

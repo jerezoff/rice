@@ -3,6 +3,13 @@
   imports = [ ./waybar/module.nix ];
 
   home.packages = with pkgs; [
+    obsidian
+    qbittorrent
+    ghostty
+    gnome-software
+    vial
+    fluxcd
+    age
     brightnessctl
     ghostty
     pavucontrol
