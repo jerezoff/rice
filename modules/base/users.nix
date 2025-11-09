@@ -3,7 +3,7 @@
   users.users.jerezoff = {
     isNormalUser = true;
     description = "jerezoff";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
   };
 }

@@ -55,9 +55,7 @@
         modules = global_modules ++ [
           ./hosts/devserver/configuration.nix
           ./hosts/devserver/hardware-configuration.nix
-          ./modules/server/garage.nix
-          ./modules/server/postgres.nix
-          ./modules/server/redis.nix
+          ./modules/server/docker.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
