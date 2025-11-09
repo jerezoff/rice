@@ -68,7 +68,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.jerezoff = {
-              imports = [ ./home/jerezoff/hosts/hackersmainframe.nix ];
+              imports = [ ./home/jerezoff/hosts/devserver.nix ];
             };
           }
         ];
