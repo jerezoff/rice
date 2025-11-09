@@ -33,7 +33,59 @@
 
     globals.mapleader = " ";
 
+    keymaps = [
+      {
+        key = ";";
+        action = ":";
+      }
+      {
+        key = "<leader><Space>";
+        action = "<cmd>Telescope find_files<CR>";
+        mode = "n";
+      }
+      {
+        key = "<leader>qq";
+        action = "<cmd>q<CR>";
+        mode = "n";
+      }
+      {
+        key = "<S-h>";
+        action = "<cmd>BufferPrevious<CR>";
+        mode = "n";
+      }
+      {
+        key = "<S-l>";
+        action = "<cmd>BufferNext<CR>";
+        mode = "n";
+      }
+      {
+        key = "gg";
+        action = "<cmd>LazyGit<CR>";
+        mode = "n";
+      }
+    ];
+
+    lsp.servers = {
+      docker_language_server.enable = true;
+      nginx_language_server.enable = true;
+      ts_ls.enable = true;
+      nil_ls.enable = true;
+    };
+
     plugins = {
+      barbar.enable = true;
+      harpoon = {
+        enableTelescope = true;
+        enable = true;
+      };
+      which-key = {
+      	enable = true;
+        settings = {
+          preset = "modern";
+          show_help = true;
+          timeout = 300;
+        };
+      };
       web-devicons.enable = true;
       lualine.enable = true;
       treesitter.enable = true;
@@ -43,6 +95,14 @@
       telescope.enable = true;
       lazygit.enable = true;
       dashboard.enable = true;
+      none-ls = {
+        enable = true;
+        sources.formatting = {
+          prettier.enable = true;
+          nixfmt.enable = true;
+        };
+      };
+      nix.enable = true;
     };
 
     colorschemes.gruvbox.enable = true;
