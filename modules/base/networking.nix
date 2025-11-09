@@ -1,4 +1,4 @@
-{ ... }: {
-  networking.hostName = "nixos"; # Define your hostname.
+{ lib, ... }: {
+  networking.hostName = lib.mkDefault "miraios";
   networking.networkmanager.enable = true;
 }

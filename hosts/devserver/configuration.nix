@@ -1,1 +1,1 @@
-{ ... }: { }
+{ ... }: { networking.hostName = "devserver"; }

@@ -1,4 +1,5 @@
 { pkgs, ... }: {
+  networking.hostName = "heavycruiser";
   environment.systemPackages = with pkgs; [ obs-studio ];
 
   programs.steam = {

@@ -52,6 +52,7 @@
 
       nixosConfigurations.devserver = nixpkgs.lib.nixosSystem {
         inherit system;
+        networking.hostName = "devserver";
         modules = global_modules ++ [
           ./hosts/devserver/configuration.nix
           ./hosts/devserver/hardware-configuration.nix
