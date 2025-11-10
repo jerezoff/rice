@@ -1,14 +1,13 @@
 { pkgs, ... }: {
-  imports = [
-    ./neovim.nix
-  ];
+  imports = [ ./neovim.nix ];
   home.username = "jerezoff";
   home.homeDirectory = "/home/jerezoff";
   home.stateVersion = "25.05";
 
-  home.packages = with pkgs; [ kubectl k9s git tmux wofi ];
+  home.packages = with pkgs; [ kubectl k9s git tmux wofi ghostty ];
 
   programs.home-manager.enable = true;
+
   programs.git = {
     enable = true;
     userEmail = "jerezoff@gmail.com";

@@ -1,8 +1,4 @@
-{ nixvim, pkgs, ... }:
-{
-  imports = [
-    nixvim.homeModules.nixvim
-  ];
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     sops
     python3
@@ -18,9 +14,7 @@
     fd
     imagemagick
     tree-sitter
-    gcc
     nodejs
-    rustc
     zig
     cargo
   ];
@@ -83,7 +77,7 @@
         enable = true;
       };
       which-key = {
-      	enable = true;
+        enable = true;
         settings = {
           preset = "modern";
           show_help = true;
@@ -110,11 +104,11 @@
     };
 
     opts = {
-      number = true;         
-      relativenumber = true; 
-      tabstop = 2;           
-      shiftwidth = 2;        
-      expandtab = true;      
+      number = true;
+      relativenumber = true;
+      tabstop = 2;
+      shiftwidth = 2;
+      expandtab = true;
     };
 
     colorschemes.gruvbox.enable = true;

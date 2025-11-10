@@ -1,1 +1,1 @@
-{ ... }: { imports = [ ../home.nix ../hyprland/module.nix ../theme.nix ]; }
+{ ... }: { imports = [ ../home.nix ../hyprland/module.nix ]; }
