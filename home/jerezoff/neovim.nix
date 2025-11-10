@@ -1,4 +1,4 @@
-{ nixvim, lib, pkgs, ... }:
+{ nixvim, pkgs, ... }:
 {
   imports = [
     nixvim.homeModules.nixvim
@@ -32,6 +32,7 @@
     defaultEditor = true;
 
     globals.mapleader = " ";
+    dependencies.imagemagick.enable = true;
 
     keymaps = [
       {
@@ -73,7 +74,10 @@
     };
 
     plugins = {
+      conform-nvim.enable = true;
+      vim-be-good.enable = true;
       barbar.enable = true;
+      image.enable = true;
       harpoon = {
         enableTelescope = true;
         enable = true;
@@ -103,6 +107,14 @@
         };
       };
       nix.enable = true;
+    };
+
+    opts = {
+      number = true;         
+      relativenumber = true; 
+      tabstop = 2;           
+      shiftwidth = 2;        
+      expandtab = true;      
     };
 
     colorschemes.gruvbox.enable = true;
