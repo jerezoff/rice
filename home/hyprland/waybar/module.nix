@@ -67,7 +67,7 @@ in
         spacing = 10;
       };
       network = {
-        format = "󰖩 {essid}";
+        format = "󰖩 {essid} {ifname}";
         format-disconnected = "󰖪 disconnected";
       };
       clock = {
