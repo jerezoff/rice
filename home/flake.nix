@@ -17,16 +17,22 @@
     let
       system = builtins.currentSystem or "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
+      sharedModules = [
+            catppuccin.homeModules.catppuccin
+            nixvim.homeModules.nixvim
+            ./home.nix
+      ];
     in
     {
       homeConfigurations = {
-        "jerezoff" = home-manager.lib.homeManagerConfiguration {
+        jerezoff = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [
-            catppuccin.homeModules.catppuccin
-            nixvim.homeModules.nixvim
-            ./jerezoff/home.nix
-          ];
+          modules = sharedModules;
+        };
+
+        heavycruiser = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = sharedModules ++ [./hosts/heavycruiser.nix];
         };
       };
     };
