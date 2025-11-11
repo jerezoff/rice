@@ -23,12 +23,13 @@ in
       height = 0;
       modules-left = [
         "hyprland/workspaces"
-        "custom/weather"
+        "network"
       ];
-      modules-center = [ "hyprland/window" ];
+      modules-center = [
+        "hyprland/window"
+      ];
       modules-right = [
         "tray"
-        "network"
         "pulseaudio"
         "backlight"
         "battery"
@@ -52,19 +53,13 @@ in
       };
       memory = {
         interval = 30;
-        format = "  {}%";
+        format = "  {}%";
         format-alt = " {used:0.1f}G";
         max-length = 10;
       };
       backlight = {
         format = "󰖨 {}";
         device = "acpi_video0";
-      };
-      "custom/weather" = {
-        tooltip = true;
-        format = "{}";
-        restart-interval = 300;
-        exec = "/home/roastbeefer/.cargo/bin/weather";
       };
       tray = {
         icon-size = 13;
@@ -76,7 +71,7 @@ in
         format-disconnected = "󰖪 disconnected";
       };
       clock = {
-        format = " {:%I:%M %p   %m/%d} ";
+        format = "{:%H:%M}";
         tooltip-format = ''
           <big>{:%Y %B}</big>
           <tt><small>{calendar}</small></tt>'';
