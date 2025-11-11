@@ -22,7 +22,6 @@
     systemd.enable = true;
     settings = {
       exec-once = [
-        "waybar"
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "xdg-desktop-portal &"
       ];
