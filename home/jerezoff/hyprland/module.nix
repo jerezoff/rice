@@ -1,6 +1,6 @@
 { pkgs, ... }: {
 
-  imports = [ ./waybar/module.nix ];
+  imports = [ ./waybar/module.nix ./monitors.nix ];
 
   home.packages = with pkgs; [
     ghostty
