@@ -1,4 +1,6 @@
-{ ... }: {
+{ pkgs, ... }: {
+
+  home.packages = with pkgs; [ gajim ];
 
   wayland.windowManager.hyprland.settings.monitor = [
       "DP-3, 3440x1440@144, 0x0, 1"

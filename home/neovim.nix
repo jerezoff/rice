@@ -38,6 +38,9 @@
         action = "<cmd>Telescope find_files<CR>";
         mode = "n";
       }
+      { mode = "n"; key = "<leader>fg"; action = "<cmd>Telescope live_grep<CR>"; }
+      { mode = "n"; key = "<leader>fb"; action = "<cmd>Telescope buffers<CR>"; }
+      { mode = "n"; key = "<leader>fh"; action = "<cmd>Telescope help_tags<CR>"; }
       {
         key = "<leader>qq";
         action = "<cmd>q<CR>";
@@ -54,7 +57,7 @@
         mode = "n";
       }
       {
-        key = "gg";
+        key = "<leader>gg";
         action = "<cmd>LazyGit<CR>";
         mode = "n";
       }
@@ -68,14 +71,18 @@
     };
 
     plugins = {
+      oil.enable=true;
+      snacks.enable = true;
+      bufferline.enable = true;
       conform-nvim.enable = true;
       vim-be-good.enable = true;
-      barbar.enable = true;
       image.enable = true;
       harpoon = {
         enableTelescope = true;
         enable = true;
       };
+      trouble.enable = true;
+      noice.enable = true;
       which-key = {
         enable = true;
         settings = {
@@ -87,7 +94,6 @@
       web-devicons.enable = true;
       lualine.enable = true;
       treesitter.enable = true;
-      neo-tree.enable = true;
       lspconfig.enable = true;
       blink-cmp.enable = true;
       telescope.enable = true;
