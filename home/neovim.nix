@@ -16,7 +16,6 @@
     tree-sitter
     nodejs
     zig
-    cargo
   ];
 
   programs.nixvim = {
@@ -26,7 +25,10 @@
     defaultEditor = true;
 
     globals.mapleader = " ";
-    dependencies.imagemagick.enable = true;
+    dependencies = {
+      imagemagick.enable = true;
+      rust-analyzer.enable = true;
+    };
 
     keymaps = [
       {
@@ -66,6 +68,7 @@
     lsp.servers = {
       docker_language_server.enable = true;
       nginx_language_server.enable = true;
+      rust_analyzer.enable = true;
       ts_ls.enable = true;
       nil_ls.enable = true;
     };

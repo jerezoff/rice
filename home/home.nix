@@ -18,7 +18,7 @@
     enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [ ];
+      plugins = [ "docker" "rust" "node" "ssh" "ssh-agent" "tmux" "kubectl" ];
       theme = "agnoster";
     };
   };
