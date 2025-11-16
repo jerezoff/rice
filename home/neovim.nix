@@ -40,6 +40,8 @@
         action = "<cmd>Telescope find_files<CR>";
         mode = "n";
       }
+      { mode = "n"; key = "<leader>e"; action = "<cmd>Oil<CR>"; }
+      { mode = "n"; key = "-"; action = "<cmd>Oil<CR>"; }
       { mode = "n"; key = "<leader>fg"; action = "<cmd>Telescope live_grep<CR>"; }
       { mode = "n"; key = "<leader>fb"; action = "<cmd>Telescope buffers<CR>"; }
       { mode = "n"; key = "<leader>fh"; action = "<cmd>Telescope help_tags<CR>"; }
@@ -76,7 +78,6 @@
     plugins = {
       oil.enable=true;
       snacks.enable = true;
-      bufferline.enable = true;
       conform-nvim.enable = true;
       vim-be-good.enable = true;
       image.enable = true;
@@ -101,7 +102,6 @@
       blink-cmp.enable = true;
       telescope.enable = true;
       lazygit.enable = true;
-      dashboard.enable = true;
       none-ls = {
         enable = true;
         sources.formatting = {
