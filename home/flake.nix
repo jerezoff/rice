@@ -6,6 +6,12 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     catppuccin.url = "github:catppuccin/nix/release-25.05";
     nixvim = {
       url = "github:nix-community/nixvim/nixos-25.05";
@@ -13,7 +19,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, catppuccin, ... }:
+  outputs = { nixpkgs, quickshell, home-manager, nixvim, catppuccin, ... }:
     let
       system = builtins.currentSystem or "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
@@ -21,6 +27,13 @@
             catppuccin.homeModules.catppuccin
             nixvim.homeModules.nixvim
             ./home.nix
+            { 
+              home.packages = [quickshell.packages.${system}.default ];
+              home.file.".config/quickshell" = {
+                source = ./hyprland/quickshell;
+                recursive = true;
+              };
+            }
       ];
     in
     {

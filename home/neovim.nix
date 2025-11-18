@@ -68,6 +68,7 @@
     ];
 
     lsp.servers = {
+      qmlls.enable = true;
       docker_language_server.enable = true;
       nginx_language_server.enable = true;
       rust_analyzer.enable = true;
@@ -76,6 +77,7 @@
     };
 
     plugins = {
+      undotree.enable = true;
       oil.enable=true;
       snacks.enable = true;
       conform-nvim.enable = true;

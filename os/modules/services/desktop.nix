@@ -14,6 +14,13 @@
   services.tumbler.enable = true;
   services.upower.enable = true;
 
+  hardware.keyboard.qmk.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    via
+    vial
+  ];
+
   services.udev = {
     packages = with pkgs; [ qmk qmk-udev-rules qmk_hid via vial ];
   };
