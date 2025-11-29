@@ -14,7 +14,18 @@
     hyprlock
     hypridle
   ];
-
+  gtk.enable = true;
+  home.pointerCursor = {
+    gtk.enable=true;
+    enable = true;
+    package = pkgs.catppuccin-cursors.mochaPeach;
+    hyprcursor = {
+      enable = true;
+      size = 24;
+    };
+    name = "catppuccin-mocha-peach-cursors";
+    size = 24;
+  };
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;

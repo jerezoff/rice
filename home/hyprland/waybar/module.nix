@@ -9,6 +9,7 @@ in
     mode = "createLink";
   };
 
+
   programs.waybar = { 
     style = styleConfig;
     enable = true; 

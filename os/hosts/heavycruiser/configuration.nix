@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   networking.hostName = "heavycruiser";
-  environment.systemPackages = with pkgs; [ obs-studio ];
+
+  environment.systemPackages = with pkgs; [ obs-studio qemu ];
 
   programs.steam = {
     enable = true;

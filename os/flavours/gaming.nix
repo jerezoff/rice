@@ -1,3 +1,3 @@
 { ... }: {
-  imports = [ ../modules/gaming/minecraft.nix ../modules/gaming/wine.nix ];
+  imports = [ ../modules/gaming/wine.nix ];
 }
