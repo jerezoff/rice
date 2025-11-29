@@ -27,7 +27,7 @@
   networking.nameservers = [ "127.0.0.1" ];
 
   # Optional: Open firewall for DNS (UDP/TCP port 53) if needed for remote clients
-  networking.firewall.allowedTCPPorts = [ 53 ];
+  networking.firewall.allowedTCPPorts = [ 53 53317 ];
   networking.firewall.allowedUDPPorts = [ 53 ];
 
   # Optional: If using NetworkManager, ensure it doesn't override DNS
