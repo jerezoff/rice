@@ -7,5 +7,4 @@
     ../modules/software/git.nix
   ];
   nixpkgs.config.allowUnfree = true;
-
 }
