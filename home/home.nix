@@ -4,7 +4,7 @@
   home.homeDirectory = "/home/jerezoff";
   home.stateVersion = "25.05";
 
-  home.packages = with pkgs; [ kubectl k9s git tmux wofi ghostty firefox ];
+  home.packages = with pkgs; [ kubectl k9s git tmux wofi ghostty firefox rnote ];
 
   programs.home-manager.enable = true;
 
