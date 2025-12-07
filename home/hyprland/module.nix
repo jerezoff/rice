@@ -26,6 +26,9 @@
     name = "catppuccin-mocha-peach-cursors";
     size = 24;
   };
+
+  services.hypridle.enable = true;
+
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;
