@@ -6,7 +6,6 @@
     ghostty
     brightnessctl
     pavucontrol
-    networkmanagerapplet
     hyprshot
     mako
     libnotify

@@ -1,6 +1,26 @@
-{ lib, ... }: {
-  networking.hostName = lib.mkDefault "miraios";
-  networking.networkmanager.enable = true;
+{ pkgs, lib, ... }: {
+
+  environment.systemPackages = with pkgs; [impala];
+
+  networking = {
+    useDHCP = true;
+    useNetworkd = true;
+    hostName = lib.mkDefault "miraios";
+    wireless = {
+      iwd = {
+        enable = true;
+        settings = {
+          IPv6 = {
+            enabled = true;
+          };
+          Settings = {
+            AutoConnect = true;
+          };
+        };
+      };
+    };
+  };
+
   services.dnsmasq = {
     enable = true;
     resolveLocalQueries = true;  # Allow resolving from /etc/hosts and local networks
@@ -29,9 +49,4 @@
   # Optional: Open firewall for DNS (UDP/TCP port 53) if needed for remote clients
   networking.firewall.allowedTCPPorts = [ 53 53317 ];
   networking.firewall.allowedUDPPorts = [ 53 ];
-
-  # Optional: If using NetworkManager, ensure it doesn't override DNS
-  networking.networkmanager = {
-    dns = "dnsmasq";  # Use dnsmasq for per-connection DNS (if you want local overrides)
-  };
 }
