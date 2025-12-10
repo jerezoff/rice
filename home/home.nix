@@ -10,8 +10,12 @@
 
   programs.git = {
     enable = true;
-    userEmail = "jerezoff@gmail.com";
-    userName = "jerezoff";
+    settings = {
+    user = {
+      email = "jerezoff@gmail.com";
+      name = "jerezoff";
+    };
+    };
   };
 
   programs.zsh = {

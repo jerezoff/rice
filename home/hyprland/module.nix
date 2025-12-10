@@ -12,6 +12,7 @@
     wl-clipboard
     hyprlock
     hypridle
+    hyprpolkitagent
   ];
   gtk.enable = true;
   home.pointerCursor = {
@@ -36,7 +37,8 @@
     settings = {
       exec-once = [
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "xdg-desktop-portal &"
+        "xdg-desktop-portal"
+        "hyprpolkitagent"
       ];
       "$terminal" = "ghostty";
       "$fileManager" = "thunar";
