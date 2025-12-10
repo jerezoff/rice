@@ -13,6 +13,7 @@
     hyprlock
     hypridle
     hyprpolkitagent
+    gcr
   ];
   gtk.enable = true;
   home.pointerCursor = {
@@ -27,6 +28,7 @@
     size = 24;
   };
 
+  services.gnome-keyring.enable = true;
   services.hypridle.enable = true;
 
   wayland.windowManager.hyprland = {
