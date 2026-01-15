@@ -3,6 +3,13 @@
 
   environment.systemPackages = with pkgs; [ obs-studio qemu ];
 
+  programs.gamescope = {
+    enable = true;
+    capSysNice = true;
+  };
+
+  programs.steam.gamescopeSession.enable = true;
+
   programs.steam = {
     enable = true;
     remotePlay.openFirewall =

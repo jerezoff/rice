@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
+    sonobus # audio streaming
     sops
     python3
     lua
