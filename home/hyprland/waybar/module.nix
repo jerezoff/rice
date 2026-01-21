@@ -13,7 +13,6 @@ in
   programs.waybar = { 
     style = styleConfig;
     enable = true; 
-    systemd.enable = true;
     settings = [{
       layer = "top";
       position = "top";
