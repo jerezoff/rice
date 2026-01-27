@@ -4,7 +4,7 @@
     impala
     dnsmasq
     kdePackages.bluedevil
-    bluez-qt
+    kdePackages.bluez-qt
     pkgs.openobex
     pkgs.obexftp
   ];
