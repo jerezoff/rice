@@ -3,7 +3,7 @@
   environment.systemPackages = with pkgs; [
     impala
     dnsmasq
-    bluedevil
+    kdePackages.bluedevil
     bluez-qt
     pkgs.openobex
     pkgs.obexftp
