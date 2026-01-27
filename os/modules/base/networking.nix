@@ -1,6 +1,8 @@
 { pkgs, lib, ... }: {
 
-  environment.systemPackages = with pkgs; [impala];
+  environment.systemPackages = with pkgs; [impala dnsmasq];
+
+  services.blueman.enable = true;
 
   networking = {
     useDHCP = true;
@@ -20,6 +22,8 @@
       };
     };
   };
+
+  services.resolved.enable = false;
 
   services.dnsmasq = {
     enable = true;
