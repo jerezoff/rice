@@ -1,6 +1,13 @@
 { pkgs, lib, ... }: {
 
-  environment.systemPackages = with pkgs; [impala dnsmasq];
+  environment.systemPackages = with pkgs; [
+    impala
+    dnsmasq
+    bluedevil
+    bluez-qt
+    pkgs.openobex
+    pkgs.obexftp
+  ];
 
   services.blueman.enable = true;
 
