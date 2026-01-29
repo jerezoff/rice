@@ -63,9 +63,8 @@
     settings = {
       # Upstream DNS servers to forward queries to
       server = [
-        "8.8.8.8"          # Google DNS primary
-        "8.8.4.4"          # Google DNS secondary
-        "1.1.1.1"          # Cloudflare DNS (optional, for redundancy)
+        "94.140.14.14"
+        "94.140.15.15"
       ];
       # Cache settings
       cache-size = 1000;         # Number of DNS entries to cache (default: 150)
