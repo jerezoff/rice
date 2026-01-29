@@ -1,4 +1,5 @@
 { ... }: {
+  hardware.i2c.enable = true;
   imports = [
     ../modules/services/desktop.nix
     ../modules/software/hyprland.nix
