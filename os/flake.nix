@@ -11,7 +11,7 @@
     let
       system = "x86_64-linux";
       global_modules =
-        [ catppuccin.nixosModules.catppuccin ./flavours/base.nix ];
+        [ ./flavours/base.nix ];
     in
     {
       nixosConfigurations.heavycruiser = nixpkgs.lib.nixosSystem {

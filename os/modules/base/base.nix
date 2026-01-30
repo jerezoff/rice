@@ -6,7 +6,6 @@
     ./locale.nix
     ./networking.nix
     ./system.nix
-    ./theme.nix
     ./users.nix
   ];
 }
