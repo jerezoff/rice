@@ -5,5 +5,6 @@
     ../modules/software/hyprland.nix
     ../modules/visual/fonts.nix
     ../modules/software/localsend.nix
+    ../modules/visual/kde.nix
   ];
 }
