@@ -5,10 +5,11 @@
     dnsmasq
     kdePackages.bluedevil
     kdePackages.bluez-qt
-    pkgs.openobex
-    pkgs.obexftp
+    openobex
+    obexftp
+    netbird-ui
   ];
-
+  services.netbird.enable = true;
 
   hardware.bluetooth = {
     enable = true;
@@ -36,8 +37,6 @@
   services.blueman.enable = true;
 
   networking = {
-    useDHCP = true;
-    useNetworkd = true;
     hostName = lib.mkDefault "miraios";
     wireless = {
       iwd = {
@@ -54,8 +53,11 @@
     };
   };
 
-  services.resolved.enable = false;
+  networking.useDHCP = false;
+  networking.dhcpcd.enable = false;
+  networking.networkmanager.dns = "none";
 
+  networking.networkmanager.enable = true;
   services.dnsmasq = {
     enable = true;
     resolveLocalQueries = true;  # Allow resolving from /etc/hosts and local networks
@@ -81,6 +83,7 @@
   networking.nameservers = [ "127.0.0.1" ];
 
   # Optional: Open firewall for DNS (UDP/TCP port 53) if needed for remote clients
-  networking.firewall.allowedTCPPorts = [ 53 53317 ];
-  networking.firewall.allowedUDPPorts = [ 53 ];
+  networking.firewall.enable = true;
+  networking.firewall.allowedTCPPorts = [ 53 53317 54297 ];
+  networking.firewall.allowedUDPPorts = [ 53 1900 54297 ];
 }

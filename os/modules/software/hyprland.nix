@@ -13,8 +13,6 @@
 
   environment.systemPackages = with pkgs; [
     usbutils
-    xdg-desktop-portal
-    xdg-desktop-portal-hyprland
-    xdg-desktop-portal-gtk
+    kdePackages.xdg-desktop-portal-kde
   ];
 }
