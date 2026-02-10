@@ -7,18 +7,12 @@
     kdePackages.bluez-qt
     openobex
     obexftp
-    netbird-ui
   ];
-  services.netbird = {
-    enable = true;
-    clients.wt0 = {
-      port = 51821;
-      ui.enable = true;
-      openFirewall = true;
-      openInternalFirewall = true;
-    };
+  nix.settings = {
+    max-jobs = "auto";
+    cores = 0;
   };
-
+  services.netbird.enable = true;
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -43,7 +37,6 @@
 
 
   services.blueman.enable = true;
-
   networking = {
     hostName = lib.mkDefault "miraios";
     wireless = {
@@ -62,10 +55,11 @@
   };
 
   networking.useDHCP = false;
+  networking.firewall.checkReversePath = false;
   networking.dhcpcd.enable = false;
-  networking.networkmanager.dns = "none";
 
   networking.networkmanager.enable = true;
+  networking.networkmanager.dns = "dnsmasq";
   services.dnsmasq = {
     enable = true;
     resolveLocalQueries = true;  # Allow resolving from /etc/hosts and local networks
@@ -92,6 +86,6 @@
 
   # Optional: Open firewall for DNS (UDP/TCP port 53) if needed for remote clients
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [ 53 53317 54297 ];
-  networking.firewall.allowedUDPPorts = [ 53 1900 54297 ];
+  networking.firewall.allowedTCPPorts = [ 53 53317 54297 51820 ];
+  networking.firewall.allowedUDPPorts = [ 53 1900 54297 51820 ];
 }
