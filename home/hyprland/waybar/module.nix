@@ -3,13 +3,6 @@ let
   styleConfig = builtins.readFile ./style.css;
 in 
 {
-  catppuccin.waybar = {
-    enable = true;
-    flavor = "mocha";
-    mode = "createLink";
-  };
-
-
   programs.waybar = { 
     style = styleConfig;
     enable = true; 

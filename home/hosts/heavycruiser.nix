@@ -1,6 +1,6 @@
 { pkgs, ... }: {
 
-  home.packages = with pkgs; [ gajim rustc cargo fluxcd k9s gimp ];
+  home.packages = with pkgs; [ gajim rustc cargo fluxcd gimp ];
 
   wayland.windowManager.hyprland = {
     settings = {
